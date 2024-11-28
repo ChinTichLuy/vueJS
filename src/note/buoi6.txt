@@ -1,0 +1,16 @@
+hien thi co dieu kien (CONDITIONAL RENDERING): v-if , v-else-if , v-else, va v-show
+
+- so sanh v-show va v-if : ket qua hien thi cua v-show va v-if giong het nhau
+ + v-if : render ra khi dieu kien dung, va no se huy phan tu khi dieu kien sai
+    hieu suat: tot cho truong hop dieu kien it thay doi
+    su dung trong truong hop can giam bot tai nguyen trang wweb
+ + v-show : render ra toan bo cac phan tu nhung no se thay doi thuoc tinh "display"
+    hieu suat : tot khi dieu kien thay doi thuong xuyen
+    su dung : khi khong muon tai tao lai phan tu html
+    luu y : v-show khong di cung v-else
+
+VONG LAP (LIST RENDERING)
++ v-for mang
++ v-for object
++ v-for template (mang obj)
+

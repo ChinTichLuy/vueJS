@@ -1,0 +1,15 @@
+DATA BINDING trong Vue 
+- Data binding là cơ chế thiết lập liên kết giữa các code logic(js/css) và giao diện(html)
+- Data binding sẽ giúp giao diện tự động cập nhật khi dữ liệu thay đổi
+
+2 loại DATA BINDING trong vueJS
+- binding 1 chiều: Nội suy, sự kiện, thuộc tính
+- binding 2 chiều: dùng v-model
+
+DIRECTIVE: là thuộc tính đặc biệt trong Vue và bắt đầu bằng v-
+- Mỗi DIRECTIVE cung cấp 1 tính năng hỗ trợ lập trình dễ dàng hơn
+
+CLASS và STYLE có BINDING riêng
+- v-binding:class dùng để binding các lớp
+- v-binding:style dùng để binding trực tiếp cho phần tử
+

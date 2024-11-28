@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Steve Cimora",
+      "email": "john@example.com"
+    },
+    {
+      "id": "2",
+      "name": "David Hoang",
+      "email": "jane@example.com"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "sku": "SP1",
+      "name": "Banh ngot khong nhat",
+      "price": 55555
+    },
+    {
+      "id": "2",
+      "sku": "SP3",
+      "name": "Banh tong that",
+      "price": 554433
+    },
+    {
+      "id": "3",
+      "sku": "SP4",
+      "name": "Banh man khong ngot",
+      "price": 49999
+    },
+    {
+      "id": "4",
+      "sku": "SP9",
+      "name": "Banh dat nhung ko re",
+      "price": 8888333
+    }
+  ],
+  "students": [
+    {
+      "id": "6873",
+      "name": "yujk tyt",
+      "email": "admin@gmail.com",
+      "age": 56,
+      "image": "anh123"
+    },
+    {
+      "id": "b956",
+      "name": "John Doe",
+      "email": "mssv@gmail.com",
+      "age": 34,
+      "image": "anh123"
+    },
+    {
+      "id": 71351,
+      "name": "John Doe",
+      "email": "huy123@gmail.com",
+      "age": 34,
+      "image": "anh123"
+    }
+  ]
+}
