@@ -4,15 +4,22 @@ import {useRouter} from "vue-router";
 import axios from "axios";
 
 const router = useRouter()
-const newStu = ref({id:Math.floor(Math.random() * 1000000),name: "", email:"",age:"",image:""});
+// const newStu = ref({name: "", email:"",age:"",image:""});
+const newStu = ref({ id: String(Math.floor(Math.random() * 100)),name: "", email:"",age:"",image:""});
+// let lastID = 0;
+// const changeID = ()=>{
+//   lastID += 1;
+//   return lastID;
+// }
+// const newStu = ref({id:String(changeID()),name: "", email:"",age:"",image:""});
 
 const createStudent = async ()=>{
     try {
         await axios.post("http://localhost:3000/students", newStu.value);
-        alert('Them Sinh vien dùng thành công');
-        router.push("/");
+        alert('Them Sinh vien thành công');
+        router.push("/student");
     } catch (error) {
-        alert("lỗi khi thêm ng dùng :" + error.massahe);
+        alert("lỗi khi thêm sinh vien :" + error.massage);
     }
 };
 </script>
@@ -36,7 +43,7 @@ const createStudent = async ()=>{
                     </div>
                     <div class="form-group mb-3">
                         <label for="image">Image</label>
-                        <input type="files" id="image" v-model="newStu.image" class="form-control" required>
+                        <input type="text" id="image" v-model="newStu.image" class="form-control" required>
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-success">Thêm</button>

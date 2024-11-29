@@ -1,45 +1,59 @@
 <script setup>
-import {ref} from "vue";
-import {useRouter} from "vue-router";
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import axios from "axios";
 
-const router = useRouter()
+const route = useRoute();  // Lấy đối tượng route
+const studentId = route.params.id;  // Lấy ID từ URL
+const detailStudent = ref([]);  // Dữ liệu sinh viên
+const loading= ref(true);
+const error=ref(null);
+const showStu = async () => {
+  try {
+    // gữi mã yêu cầu GET tới API
+    const response = await axios.get(`http://localhost:3000/students/${studentId}`);
+    // console.log(studentId);
+    detailStudent.value = response.data;
+  } catch (error) {
+    error.value = "Lỗi CMNR" + error.message;
+  } finally {
+    loading.value = false; //kết thúc
+  }
+}
+onMounted(showStu);
 
 
 </script>
 <template>
-      <div class="container">
+  <div class="container">
     <h1 class="text-center">Chi tiet Sinh Vien</h1>
     <!-- thông báo khi đang tải dữ liệu -->
-     <p v-if="loading">Đang load đợi tí đê...</p>
-     <!-- hiển thị -->
-      <p v-if="error">{{ error }}</p>
-      <!-- hiển thị danh sách người dùng -->
-       <div v-if="!loading && !error">
+    <p v-if="loading">Đang load đợi tí đê...</p>
+    <!-- hiển thị -->
+    <p v-if="error">{{ error }}</p>
+    <!-- hiển thị danh sách người dùng -->
+    <div v-if="!loading && !error">
 
-        <router-link to="/student" class="btn btn-success">Back</router-link>
-        <table class="table table-border table-hover">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>ID</th>
-                    <th>Họ Tên</th>
-                    <th>Tuoi</th>
-                    <th>Email</th>
-                    <th>Anh</th>
-                </tr>
-            </thead>
-            <tbody v-for="(student, key) in students" :key="key">
-                <tr>
-                    <td>{{ key+1 }}</td>
-                    <td>{{ student.id }}</td>
-                    <td>{{ student.name }}</td>
-                    <td>{{ student.age }}</td>
-                    <td>{{ student.email }}</td>
-                    <td>{{ student.image }}</td>
-                </tr>
-            </tbody>
-        </table>
-       </div>
-</div>
+
+        <div class="card" style="width: 30rem;">
+        <img :src="detailStudent.image" alt="Student Image" class="card-img-top" width="max" height="max">
+
+        <div class="card-body">
+          <h2 class="card-title">{{ detailStudent.name }}</h2>
+          <p class="card-text">
+            <b>ID: </b> {{ detailStudent.id }}
+          </p>
+          <p class="card-text">
+            <b>Age: </b> {{ detailStudent.age }}
+          </p>
+          <p class="card-text">
+            <b>Email: </b> {{ detailStudent.email }}
+          </p>
+        </div>
+      </div>
+
+
+      <router-link to="/student" class="btn btn-success">Back</router-link>
+    </div>
+  </div>
 </template>

@@ -70,7 +70,7 @@ onMounted(fetchStu);
                     <td>{{ student.name }}</td>
                     <td>{{ student.age }}</td>
                     <td>{{ student.email }}</td>
-                    <td>{{ student.image }}</td>
+                    <td> <img :src="student.image" alt="Student Image" width="100" height="100"></td>
                     <td>
                         <!-- liên kết tới trang sủa ng dùng với id tương ứng -->
                          <router-link :to="`/update/${student.id} `" class="btn btn-warning">Sửa</router-link>

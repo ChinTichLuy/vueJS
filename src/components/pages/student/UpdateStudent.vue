@@ -21,7 +21,7 @@ const updateStu = async()=>{
     try {
         await axios.put(`http://localhost:3000/students/${route.params.id}`, editingStu.value);
         alert('cập nhật sinh vien thành công');
-        router.push("/");
+        router.push("/student");
     } catch (error) {
         alert("lỗi khi cập nhật sinh vien :" + error.massahe);
     }
@@ -49,7 +49,7 @@ onMounted(fetchStu);
                     </div>
                     <div class="form-group mb-3">
                         <label for="image">Image</label>
-                        <input type="files" id="image" v-model="editingStu.image" class="form-control" required>
+                        <input type="text" id="image" v-model="editingStu.image" class="form-control" required>
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-success">Cập Nhật</button>
