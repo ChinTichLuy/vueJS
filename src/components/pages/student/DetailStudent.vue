@@ -15,20 +15,18 @@ const showStu = async () => {
     // console.log(studentId);
     detailStudent.value = response.data;
   } catch (error) {
-    error.value = "Lỗi CMNR" + error.message;
+    error.value = "Lỗi" + error.message;
   } finally {
     loading.value = false; //kết thúc
   }
 }
 onMounted(showStu);
-
-
 </script>
 <template>
   <div class="container">
     <h1 class="text-center">Chi tiet Sinh Vien</h1>
     <!-- thông báo khi đang tải dữ liệu -->
-    <p v-if="loading">Đang load đợi tí đê...</p>
+    <p v-if="loading">Loading...</p>
     <!-- hiển thị -->
     <p v-if="error">{{ error }}</p>
     <!-- hiển thị danh sách người dùng -->

@@ -5,7 +5,7 @@
 <template>
 
 <header class="bg-primary text-center py-3">
-  <h1>Day la Hoang</h1>
+  <h1>Day la Header</h1>
 
 </header>
 
